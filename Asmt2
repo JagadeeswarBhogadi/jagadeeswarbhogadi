@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book Upload Portal</title>
+<style>
+body{
+background-color:blueviolet;
+width:60%;
+height:100%;
+}
+#Bookname{
+    position:absolute;
+    top:120%;
+    left:43%;
+    width:20%;
+}
+#name{
+    border-radius: 10px;
+    border-style: none;
+    width:20%;
+    height:5%;
+    position: absolute;
+    top:10%;
+    left:40%;
+    right:50%;
+}
+#ww
+{
+    width:20%;
+    height:5%;
+    position:absolute;
+    top:20%;
+    left:40%;
+}
+label{
+    color:black;
+    font-size: 20px;
+}
+.form{
+   top:15%;
+    width:70%;
+    height:140%;
+    background-color:white;
+    border-radius: 10px;
+    position:absolute;
+    left:20%;
+    right:20%;
+}
+ .form #st{
+border-radius: 10px;
+border-style: none;
+width:30%;
+height:30px;
+background-color: darkcyan;
+color:white;
+font-size: 20px;
+}
+.form #bookname{
+width:30%;
+border-radius:5px;
+text-align: center;
+}
+.form #authorname{
+    width:30%;
+    border-radius:5px;
+    text-align: center;
+}
+
+.form #isbn{
+    width:30%;
+    border-radius:5px;
+    text-align: center;
+}
+h1{
+    color:white;
+    position: absolute;
+    left:44%;
+    font-size:40px;
+}
+.form #table{
+    position: absolute;
+left:35%;
+top:45%;
+font-size: 15px;
+}
+
+.form #table tr{
+    font-size:20px ;
+}
+h2{
+    position: absolute;
+    left:37%;
+    font-size:40px;
+}
+.search{
+    position: absolute;
+    left:30%;
+    top:100%;
+    width:50%;
+    height:50%;
+    background-color:white;
+}
+h3{
+    position: absolute;
+    left:33%;
+    top:0%;
+    font-size:40px;
+}
+.search #sbtn{
+    position: absolute;
+    left:28%;
+    top:70%;
+    width:40%;
+    height:10%;
+    border-radius: 10px;
+    border-style: none;
+    background-color:darkcyan;
+    color:white;
+    font-size: 20px;
+}
+.search #Bookname{
+    position: absolute;
+    left:28%;
+    top:43%;
+    width:40%;
+    height:10%;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
+    
+}
+.search #re{
+    position: absolute;
+    left:16%;
+    top:80%;
+    font-size: 20px;
+}
+</style>
+
+<script>
+
+    function book()
+    {
+        
+var bookname = document.getElementById("bookname").value;
+var authorname = document.getElementById("authorname").value;
+var isbn = document.getElementById("isbn").value;
+document.getElementById("bn").innerHTML="Book Name:"+ "   " + bookname;
+document.getElementById("an").innerHTML="Author Name:"+"   "+ authorname;
+document.getElementById("isn").innerHTML="ISBN Number"+ "   " + isbn;
+
+    }
+    
+    function static_data()
+{
+  var a=document.getElementById("Bookname").value;
+  
+    if(a=="signals" || a=="Signals")
+    {
+  var book = {
+  bookname: "signals",
+ authorname: "naresh",
+  isbn: 21233,
+};
+    document.getElementById("re").innerHTML=
+    "Book Details are  "+"   "+book.bookname+" "+"by"+" " +book.authorname+" "+"and isbn number of book is"+"  "+book.isbn;
+    }
+    else if(a=="systems" || a=="Systems")
+    {
+  var book = {
+  bookname: "Systems",
+ authorname: "Eswar",
+  isbn: 20221,
+};
+    document.getElementById("re").innerHTML=
+    "Book Details are  "+"   "+book.bookname+"by"+" " +book.authorname+" "+"and isbn number of book is"+"  "+book.isbn;
+    }
+    else if(a=="IoT" || a=="IOT")
+    {
+  var book = {
+  bookname: "IoT",
+ authorname: "SURESH",
+  isbn: 21,
+};
+    document.getElementById("re").innerHTML=
+    "Book Details are  "+"   "+book.bookname+"by"+" "+book.authorname+" "+"and isbn number of book is"+"  "+book.isbn;
+    }
+    else if(a=="Electronics" || a=="ELECTRONICS")
+    {
+  var book = {
+  bookname: "Electronics",
+ authorname: "Kiran",
+  isbn: 211111,
+};
+    document.getElementById("re").innerHTML=
+    "Book Details are  "+"   "+book.bookname+"by"+" " +book.authorname+" "+"and isbn number of book is"+"  "+book.isbn;
+    }
+    else if(a=="bibliography" || a=="Bibliography")
+  {
+  var book = {
+  bookname: "Bibliography",
+ authorname: "ganesh",
+  isbn: 20000001,
+};
+    document.getElementById("re").innerHTML=
+    "Book Details are  "+"   "+book.bookname+"by"+" " +book.authorname+" "+"and isbn number of book is"+"  "+book.isbn;
+    }
+   
+    else
+    {
+    document.getElementById("re").innerHTML="Searched book  Details Need to be updated";
+        
+    }
+   
+    }
+</script>
+</head>
+
+<body>
+<center><h1>Add Book Details</h1></center>
+    <div class="form">
+        <br><br>
+<center><label><b>Book Name</b></label></center>
+<center><input type="text" id="bookname"  placeholder="Enter Book Name"></center>
+<br>
+<center><label><b>Author Name</b></label></center>
+<center><input type="text" id="authorname"  placeholder="Enter Author Name"></center>
+<br>
+<center><label><b>ISBN Number</b></label></center>
+<center><input type="number" id="isbn"  placeholder="Enter ISBN Number"></center>
+<br>
+<center><input type="submit" onClick=book() id="st"></center><br><br>
+
+<h2>Entered  Data</h2><br>
+<table id="table">
+    
+    <tr id="bn"></tr>
+    
+    <tr id="an"></tr>
+    
+    <tr id="isn"></tr>
+</table>
+    
+
+<hr>
+</div>
+
+<div class="search">
+<h3>Search Book</h3>
+<input type="text" placeholder="search now" id="Bookname">
+<input type="submit" id="sbtn" onClick=static_data()>
+<p id="re"></p>
+</div>
+
+</body>
